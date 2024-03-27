@@ -63,6 +63,13 @@ public class AileButcemPage {
     @FindBy(id = "text2")
     public MobileElement gelirEklendiText;
 
+    @FindBy (xpath = "(//*[@class='android.widget.TextView'])[4]")
+    public MobileElement gelirPeriyodu;
+
+
+
+
+
     public void ilkEkranAyarlari() {
         ReusableMethods.wait(2);
         for (int i = 0; i < 6; i++) {
@@ -98,11 +105,11 @@ public class AileButcemPage {
 
     public void bilgiDegistirmeAssert(String isim, String soyisim, String sehir, String yas, String meslek) {
 
-        Assert.assertTrue(isimBox.getText().contains(isim));
-        Assert.assertTrue(soyisimBox.getText().contains(soyisim));
-        Assert.assertTrue(sehirBox.getText().contains(sehir));
-        Assert.assertTrue(yasBox.getText().contains(yas));
-        Assert.assertTrue(meslekBox.getText().contains(meslek));
+        Assert.assertTrue(isimBox.getText().contains(ConfigReader.getProperty(isim)));
+        Assert.assertTrue(soyisimBox.getText().contains(ConfigReader.getProperty(soyisim)));
+        Assert.assertTrue(sehirBox.getText().contains(ConfigReader.getProperty(sehir)));
+        Assert.assertTrue(yasBox.getText().contains(ConfigReader.getProperty(yas)));
+        Assert.assertTrue(meslekBox.getText().contains(ConfigReader.getProperty(meslek)));
     }
 
     public void tarihKaydirmaMethodu(int forBitis, String gun) {
