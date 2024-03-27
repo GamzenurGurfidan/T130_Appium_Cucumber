@@ -37,7 +37,7 @@ public class aileButcemStep {
     @Given("sol kisimdaki menuden {int} {int} {string} bolumune gidin")
     public void sol_kisimdaki_menuden_hesabim_bolumune_gidin(int x1Koordinati, int y1Koordinati, String menuSecenekler) throws InterruptedException {
 
-        ReusableMethods.wait(6);
+        ReusableMethods.wait(4);
         ReusableMethods.koordinatTiklamaMethodu(x1Koordinati, y1Koordinati);
         ReusableMethods.scrollWithUiScrollableAndClick(menuSecenekler);
 
@@ -55,6 +55,9 @@ public class aileButcemStep {
     public void kullanici_uygulamayi_kapatir() {
         Driver.quitAppiumDriver();
     }
+
+
+
 
     @Given("anasayfadaki arti butonuna tiklayin")
     public void anasayfadaki_arti_butonuna_tiklayin() {
@@ -85,24 +88,19 @@ public class aileButcemStep {
 
     }
 
-    @Given("Gelir Ekle sayfasinda Tarih belirlemesi ve gun {int} {int} secimi {string} yapilir")
-    public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_gun_secimi_yapilir(int forBaslangic, int forBitis, String gun) {
-        page.tarihKaydirmaMethodu(forBaslangic, forBitis, gun);
+    @Given("Gelir Ekle sayfasinda Tarih belirlemesi ve kac ay ilerleme {int} secimi gun {string} yapilir")
+    public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_gun_secimi_yapilir(int forBitis, String gun) {
+        page.tarihKaydirmaMethodu(forBitis, gun);
     }
 
-    @Given("Gelir Ekle sayfasinda Tutar bilgisi girilir")
-    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir() {
-
-    }
-
-    @Given("Kaydet Butonuna text uzerinden Tiklanir")
-    public void kaydet_butonuna_text_uzerinden_tiklanir() {
-
+    @Given("Gelir Ekle sayfasinda Tutar bilgisi {string} girilir")
+    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir(String tutar) {
+        page.tutarKutusu.sendKeys(tutar);
     }
 
     @Given("basariyla eklendigini dogrulayin")
     public void basariyla_eklendigini_dogrulayin() {
-
+        Assert.assertTrue(page.gelirEklendiText.isDisplayed());
     }
 
 }

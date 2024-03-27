@@ -5,6 +5,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.junit.Assert;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.ConfigReader;
 import utils.Driver;
 import utils.ReusableMethods;
 
@@ -56,6 +57,12 @@ public class AileButcemPage {
     @FindBy(xpath = "(//*[@class='android.view.ViewGroup'])[12]")
     public MobileElement tarihKutusu;
 
+    @FindBy(id = "android:id/button1")
+    public MobileElement okButton;
+
+    @FindBy(id = "text2")
+    public MobileElement gelirEklendiText;
+
     public void ilkEkranAyarlari() {
         ReusableMethods.wait(2);
         for (int i = 0; i < 6; i++) {
@@ -80,11 +87,11 @@ public class AileButcemPage {
 
     public void bilgileriDegistirmeVeKaydetmeMethodu(String isim, String soyisim, String sehir, String yas, String meslek) {
         bilgileriTemizleme();
-        isimBox.sendKeys(isim);
-        soyisimBox.sendKeys(soyisim);
-        sehirBox.sendKeys(sehir);
-        yasBox.sendKeys(yas);
-        meslekBox.sendKeys(meslek);
+        isimBox.sendKeys(ConfigReader.getProperty(isim));
+        soyisimBox.sendKeys(ConfigReader.getProperty(soyisim));
+        sehirBox.sendKeys(ConfigReader.getProperty(sehir));
+        yasBox.sendKeys(ConfigReader.getProperty(yas));
+        meslekBox.sendKeys(ConfigReader.getProperty(meslek));
 
         ReusableMethods.scrollWithUiScrollableAndClick("Kaydet");
     }
@@ -98,14 +105,15 @@ public class AileButcemPage {
         Assert.assertTrue(meslekBox.getText().contains(meslek));
     }
 
-    public void tarihKaydirmaMethodu(int forBaslangic, int forBitis, String gun) {
+    public void tarihKaydirmaMethodu(int forBitis, String gun) {
         tarihKutusu.click();
         ReusableMethods.wait(3);
 
-        for (int i = forBaslangic; i < forBitis; i++) {
+        for (int i = 0; i < forBitis; i++) {
             ReusableMethods.ekranKaydirmaMethodu(818, 1056, 750, 260, 1056);
         }
         ReusableMethods.scrollWithUiScrollableAndClick(gun);
+        okButton.click();
     }
 
 }
