@@ -49,7 +49,7 @@ Feature: aile butcem uygulamasi fonksiyonlari test edilir
     * basariyla eklendigini dogrulayin
     * kullanici uygulamayi kapatir
 
-@ab
+
   Scenario: ulasim icin bir gider eklemek ici kullanildi
 
     * anasayfadaki arti butonuna tiklayin

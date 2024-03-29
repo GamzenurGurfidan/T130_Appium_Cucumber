@@ -1,5 +1,5 @@
 Feature:
-
+@browser
   Scenario:
 
-    * Kullanici anasayfaya gider
+    * Kullanici "http://www.google.com" adresine gider

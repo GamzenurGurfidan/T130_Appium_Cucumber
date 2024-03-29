@@ -1,4 +1,4 @@
-@apk
+
 Feature: Kullanici herhangi bir apk yuklemesini ilgili steplerle gerceklestirir
 
   Scenario: Kullanici yuklemek istedigi apk dosyasini cihazina yukler
