@@ -2,4 +2,7 @@ Feature:
 @browser
   Scenario:
 
-    * Kullanici "http://www.google.com" adresine gider
+    * Kullanici "http://www.hepsiburada.com" adresine gider
+
+
+ # //div[@class='searchBoxMobile-DmpWM5eCRfKtYEKA7pC5']
