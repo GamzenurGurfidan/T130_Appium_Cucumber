@@ -11,8 +11,9 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",},
         features = {"src/test/resources/features","src/test/resources/mobileTesting"},
         glue = "stepdefinitions",
-        tags = "@browser",
+        tags = "@lidl",
         dryRun = false
+
         /*
         Eger dryRun true ise; Features da olusturmus oldugumuz steplerin stepdefinitions da olup olmadigini
         kontrol eder. Yani eger features daki stepleri tanimiyorsa eksik adimlari bize soyler
