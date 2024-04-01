@@ -7,6 +7,7 @@ Feature: aile butcem uygulamasi fonksiyonlari test edilir
     * "testfort108@gmail.com" ve "t108t108" bilgilerini girerek kullanici bilgileriyle giris yapin
     * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
 
+
   Scenario Outline: Aile butcem uygulamasindaki gorevler yerine getirilir
 
     * sol kisimdaki menuden 110 142 "Hesabım" bolumune gidin
@@ -34,7 +35,7 @@ Feature: aile butcem uygulamasi fonksiyonlari test edilir
     * basariyla eklendigini dogrulayin
     * kullanici uygulamayi kapatir
 
-
+@ab
   Scenario: maas geliri eklemesi icin kullanildi
 
     * anasayfadaki arti butonuna tiklayin

@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",},
         features = {"src/test/resources/features","src/test/resources/mobileTesting"},
         glue = "stepdefinitions",
-        tags = "@lidl",
+        tags = "@ab",
         dryRun = false
 
         /*
